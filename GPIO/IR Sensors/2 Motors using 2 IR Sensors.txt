@@ -1,0 +1,37 @@
+//Controlling 2 Motors using 2 IR Sensors
+
+//Connections
+Motor1 - PB0 and PB1
+Motor2 - PB2 and PB3
+IR Sensor - PA0, PA1
+//
+
+#include <avr/io.h>
+
+void main()
+{
+	DDRB = 0b00001111;
+	DDRA = 0b00000000;
+	while(1)
+	{
+		if((PINA&0b00000011)==0b00000011)
+		{
+			PORTB = 0b00001010;
+		}
+		
+		if((PINA&0b00000011)==0b00000000)
+		{
+			PORTB = 0b00000000;
+		}
+		
+		if((PINA&0b00000011)==0b00000010)
+		{
+			PORTB = 0b00001001;
+		}
+
+		if((PINA&0b00000011)==0b00000001)
+		{
+			PORTB = 0b00000110;
+		}
+	}
+}

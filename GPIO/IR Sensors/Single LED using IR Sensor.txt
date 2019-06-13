@@ -1,0 +1,25 @@
+//Controlling single led using 1 IR Sensor
+
+//Connections
+LED - PB0
+IR Sensor - PA0
+//
+
+#include <avr/io.h>
+
+void main()
+{
+	DDRB = 0b00000001;
+	DDRA = 0b00000000;
+	while(1)
+	{
+		if((PINA&0b00000001)==0b00000001)
+		{
+			PORTB = 0b00000001;
+		}
+		else
+		{
+			PORTB = 0b00000000;
+		}
+	}
+}
