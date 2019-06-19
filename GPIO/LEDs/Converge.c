@@ -4,6 +4,7 @@
 void main()
 {
 	DDRB = 0b11111111;
+        DDRC = 0b11111111;
 	unsigned int a = 0;
 	unsigned int b = 0;
 	while(1)
