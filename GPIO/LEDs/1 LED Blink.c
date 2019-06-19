@@ -4,7 +4,8 @@
 void main()
 {
 	DDRB = 0b11111111;
-        DDRC = 0b11111111;				//PORTB output
+        DDRC = 0b11111111;
+        DDRD = 0b11111111;				//PORTB output
 	while(1)
 	{
 		PORTB = 0b00000001;			//5V output from PB0
