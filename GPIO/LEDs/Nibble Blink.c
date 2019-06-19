@@ -4,6 +4,7 @@
 void main()
 {
 	DDRB=0b11111111;
+        DDRC = 0b11111111;
 	while(1)
 	{	
 		PORTB = 0b11110000;
